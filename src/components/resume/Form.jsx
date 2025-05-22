@@ -130,9 +130,9 @@ const Form = () => {
             if (validateForm()) {
               if (page === 4) {
                 axios
-                  .post("http://localhost:8000/create-pdf", formData)
+                  .post("https://careerconnect-backend-5xq5.vercel.app/create-pdf", formData)
                   .then(() =>
-                    axios.get("http://localhost:8000/fetch-pdf", {
+                    axios.get("https://careerconnect-backend-5xq5.vercel.app/fetch-pdf", {
                       responseType: "blob",
                     })
                   )
