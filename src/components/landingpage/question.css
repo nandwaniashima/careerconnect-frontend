@@ -1,0 +1,133 @@
+.faq-section {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    flex: 1;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.faq-header h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight:bold;
+}
+
+.faq-header p {
+    color: #555;
+    font-size: 18px;
+}
+
+.faq-list {
+    flex: 1;
+    max-width: 600px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.faq-answer {
+    padding-top: 10px;
+    font-size: 16px;
+    color: #777;
+    text-align:left;
+    font-weight:500;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.faq-item.open .faq-toggle {
+    color: #007BFF;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .faq-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .faq-header {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .faq-list {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-header h2 {
+        font-size: 24px;
+    }
+
+    .faq-header p {
+        font-size: 16px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
+
+    .faq-toggle {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 15px;
+    }
+
+    .faq-header h2 {
+        font-size: 20px;
+    }
+
+    .faq-header p {
+        font-size: 14px;
+    }
+
+    .faq-question {
+        font-size: 15px;
+    }
+
+    .faq-answer {
+        font-size: 13px;
+    }
+
+    .faq-toggle {
+        font-size: 18px;
+    }
+}

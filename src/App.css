@@ -1,0 +1,504 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  } 
+  
+      body {
+      font-family: "Space Grotesk", sans-serif;
+      background-color: #ffffff;
+      color: #233d1a;
+    
+  } 
+  
+  header {
+      position: fixed; /* Keeps the header fixed at the top */
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff; /* White background */
+      z-index: 1000; /* Ensures it stays on top of other content */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a shadow for better visibility */
+      padding: 10px 20px; /* Adds some padding for spacing */
+      display: flex; /* Uses flexbox for easy alignment */
+      justify-content: space-between; /* Distributes space between elements */
+      align-items: center; /* Aligns items vertically in the center */
+      transition: top 0.3s; /* Smooth transition when appearing/disappearing */
+      height: 11%;
+  }
+  
+  header .logo {
+      display: flex;
+      align-items:center;
+      justify-content: center;
+  
+      
+  }
+
+  .linkss li{
+    font-weight:600;
+  }
+
+ 
+  
+  
+  
+  .logo img {
+      width:6vh; /* Scales with viewport width */
+      margin-top:10%;
+  
+  }
+  
+  .logo span{
+      font-weight:bolder;
+      margin-top:10%;
+      font-family:'Courier New', Courier, monospace;
+      font-size:large;
+  }
+  
+  nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4vw; /* Scales with viewport width */
+      font-family: 'Courier New', Courier, monospace;
+  }
+  
+  nav a {
+      text-decoration: none;
+      color: #000000;
+      font-weight:500;
+      font-size:0.9rem;
+      position: relative;
+   
+  }
+  
+  nav a::after {
+      content:""; /* Unicode for the downward-pointing arrowhead */
+      font-size: 0.8rem; /* Slightly smaller than the text */
+      color: #000000;
+      margin-left: 5px; /* Space between the text and the arrowhead */
+     
+  }
+  
+  
+  nav span{
+      transform:rotate(90deg);
+      font-size:2rem;
+      font-weight:bold;
+      height:0.8em;
+    
+  }
+  
+  
+  nav ul li {
+      display: flex;
+      align-items: center;
+  }
+  
+  .header-right .innovons-link {
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+      font-size: 0.9rem; /* Slightly smaller than nav links */
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      
+  }
+  
+  .header-right .innovons-link::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px; /* Position the underline slightly below the text */
+      width: 0;
+      height: 2px;
+      background-color: currentColor; /* Matches the text color */
+      transition: width 0.3s ease-in-out;
+  }
+  
+  /* Expand the underline on hover */
+  .header-right .innovons-link:hover::before {
+      width: calc(100% - 1.5em); /* Underline only the text, leaving space for the arrow */
+  }
+  
+  .header-right .innovons-link span {
+      margin-left: 0.5em;
+      font-size: 1rem;
+      font-weight:bold;
+      display:inline-block;
+      transition: transform 0.3s ease-in-out;
+      
+  }
+  
+  .header-right .innovons-link:hover span {
+      transform: translateY(-5px) ; /* Move up and rotate the arrow upwards */
+  }
+  
+  
+  
+  .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      background-color: #ffffff;
+  }
+  
+  .text-container {
+      position: relative;
+      z-index: 2;
+  }
+  
+  .hero h1 {
+      font-size: 7vw; /* Adjusts with the viewport width */
+      font-weight: 700;
+      color: #233d1a;
+      margin-bottom:2vh; /* Adjusts with the viewport height */
+  }
+  
+  .hero h2 {
+      color: #233d1a;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      font-size:5em;
+      font-weight:590; /* Normal weight */
+      margin: 0; /* Remove default margins */
+      padding-left:25%;
+  }
+  
+  .circle {
+      position: absolute;
+      width: 35vw; /* Relative to viewport width */
+      height: 35vw; /* Keeps it proportional */
+      max-width: 550px;
+      max-height: 550px;
+      background-color:#daff71;
+      border-radius: 50%;
+      z-index: 1;
+      right:30vw; /* Relative positioning */
+      top: 50%;
+      transform: translate(50%, -50%);
+  }
+  
+  .rotate-icon {
+      position:absolute;
+      transform: rotate(45deg); /* Rotate the arrow */
+      z-index:2;
+      color:#daff71;
+      font-size:15em;
+      font-weight:400;
+      top:60%;
+      right:73%;
+  }
+  
+  /* Initial full-screen circle */
+  .screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color:#daff71; /* Circle color */
+      border-radius: 50%; /* Make it circular */
+      z-index: 9999;
+      transition: all 1.5s ease-in-out; /* Smooth transition */
+      transform: scale(10); /* Start at full size */
+      transform-origin:inherit; /* Transform from the center */
+  }
+  
+  /* Collapsed state that transitions to the small circle */
+  .screen.collapsed {
+      width: 35vw; /* Match the circle size */
+      height: 35vw; /* Match the circle size */
+      max-width: 550px;
+      max-height: 550px;
+      border-radius: 50%;
+      position: absolute; /* Maintain position */
+      top: 50%; /* Center vertically */
+      left: 80%; /* Adjust to match your circle's position */
+      transform: translate(-70%, -50%); /* Position to match the circle */
+      z-index: 1; /* Ensure it moves behind the content when collapsed */
+  }
+  
+  /* Container for the text elements */
+  .text-container {
+      position: relative;
+      z-index: 2;
+      animation: revealText 1s ease-in-out 1s forwards; /* Apply the reveal text animation */
+      opacity: 0; /* Start with opacity 0 for fade-in effect */
+      transform: translateY(50%); 
+  }
+  
+  
+  
+  @keyframes revealNavbar {
+      0% {
+          transform: translateY(-100%); /* Start above the viewport */
+          opacity: 0; /* Invisible at the start */
+      }
+      100% {
+          transform: translateY(0); /* End at the original position */
+          opacity: 1; /* Fully visible */
+      }
+  }
+  
+  
+  /* Keyframes for the text reveal animation */
+  @keyframes revealText {
+      0% {
+          transform: translateY(50%); /* Start off-screen below */
+          opacity: 0; /* Invisible at the start */
+      }
+      50% {
+          opacity: 1; /* Start to fade in */
+      }
+      100% {
+          transform: translateY(0); /* End at the original position */
+          opacity: 1; /* Fully visible */
+      }
+  }
+  
+  
+  @media (max-width: 768px) {
+      header {
+          padding: 3vh 5vw;
+      }
+  
+      .logo img {
+          width: 15vw;
+          max-width: 100px;
+      }
+  
+      nav ul {
+          gap: 5vw;
+      }
+  
+      nav a, .header-right .innovons-link {
+          font-size: 0.9rem;
+      }
+  
+      .hero h1 {
+          font-size: 9vw;
+      }
+  
+      .hero h2 {
+          font-size: 7vw;
+      }
+  
+      .circle {
+          width: 50vw;
+          height: 50vw;
+          right: -25vw;
+          top: 50%;
+          transform: translate(50%, -50%);
+      }
+  
+      .arrow {
+          width: 15vw; /* Increase size on smaller screens */
+          height: 15vw;
+          border-left: 2vw solid #e7ff5c;
+          border-bottom: 2vw solid #e7ff5c;
+      }
+  
+      .arrow::before {
+          width: 2vw;
+          height: 20vw;
+          top: -4vw;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      nav ul {
+          gap: 1rem;
+      }
+  
+      nav a {
+          font-size: 0.8rem;
+      }
+  
+      nav a::after {
+          font-size: 0.7rem;
+          margin-left: 3px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      nav ul {
+          gap: 0.5rem;
+      }
+  
+      nav a {
+          font-size: 0.7rem;
+      }
+  
+      nav a::after {
+          font-size: 0.6rem;
+          margin-left: 2px;
+      }
+  }
+  
+  
+  
+  
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+      .innovation-card {
+          width: calc(70% - 10px); /* Stack two per row on smaller screens */
+      }
+  }
+  
+  @media screen and (max-width: 480px) {
+      .innovation-card {
+          width: calc(100% - 10px); /* Stack one per row on very small screens */
+      }
+  }
+  
+  @media (max-width: 1024px) {
+      .case-studies-grid {
+          flex-direction: column;
+          gap: 30px;
+      }
+      
+      .discover-button {
+          padding: 10px 20px;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .case-studies h2 {
+          font-size: 2rem;
+      }
+  
+      .subtitle {
+          font-size: 1rem;
+      }
+  
+      .case-study h3 {
+          font-size: 1.25rem;
+      }
+  
+      .case-study {
+          padding: 15px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .case-studies-grid {
+          gap: 20px;
+      }
+      
+      .case-studies h2 {
+          font-size: 1.75rem;
+      }
+  
+      .subtitle {
+          font-size: 0.9rem;
+      }
+  
+      .case-study h3 {
+          font-size: 1.1rem;
+      }
+  
+      .case-study p {
+          font-size: 0.9rem;
+      }
+  
+      .highlight {
+          font-size: 1rem;
+      }
+  
+      .discover-button {
+          padding: 8px 15px;
+          font-size: 0.9rem;
+      }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+      .blog-card {
+          max-width: 48%;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .blog-header h1 {
+          font-size: 2.5em;
+      }
+  
+      .discover-button {
+          font-size: 0.9em;
+          padding: 10px 20px;
+      }
+  
+      .blog-card {
+          max-width: 100%;
+      }
+  
+      .blog-grid {
+          gap: 15px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .blog-header h1 {
+          font-size: 2em;
+      }
+  
+      .discover-button {
+          font-size: 0.8em;
+          padding: 8px 16px;
+      }
+  
+      .blog-card h2 {
+          font-size: 1.3em;
+      }
+  
+      .blog-card p {
+          font-size: 0.9em;
+      }
+  }

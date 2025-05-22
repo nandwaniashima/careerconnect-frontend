@@ -1,0 +1,163 @@
+.innovation-section {
+    background-color: #f8faf1;
+    padding-top:10%;
+}
+
+.innovation-section h2{
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom:2%;
+    color:black;
+}
+
+.innovation-intro {
+    /* font-size:1rem; */
+    margin-top: -20px;
+    margin-bottom:5%;
+    text-align: left;
+}
+
+.innovation-cards {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    gap: 10px;
+}
+
+/* .innovation-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    width: calc(25% - 10px);  /* Adjust the width to make them closer
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 400px;
+    
+} */
+
+.innovation-card {
+    position: relative; /* To position the pseudo-element */
+    background-color: #f8faf1;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    width: calc(25% - 10px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    overflow: hidden; /* Ensure the pseudo-element is contained within the card */
+    transition: transform 0.3s ease;
+    z-index: 0; /* Ensure the pseudo-element is underneath the content */
+}
+
+.innovation-card h3,
+.innovation-card p,
+.innovation-icon {
+    position: relative;
+    z-index: 2; /* Place the content above the pseudo-element */
+    font-weight: 500;
+}
+
+.innovation-icon{
+    max-width:50px;
+    z-index: 2; /* Ensures the image is above the overlay */
+}
+
+.innovation-card h3 {
+    margin-top: 15px;
+    margin-bottom:10%;
+    font-size: 1.2em;
+    text-align: left;
+    color:black;
+}
+
+ /* .innovation-card {
+    display: inline;
+}  */
+
+/* .material-icons {
+    margin-right: 150px; /* Optional: adds space between the icon and the text 
+    
+} */
+
+.innovation-card p {
+    font-size: 0.9em;
+    color: #555;
+    text-align: left;
+}
+
+/* .innovation-card img{
+    max-width: 50px;
+} */
+
+/* Pseudo-element for the hover effect */
+.innovation-card::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Start with transparent */
+    z-index: 1; /* Behind the content */
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.5s ease, background-color 0.5s ease; /* Smooth transition */
+}
+
+/* Hover effects with different colors */
+.innovation-card:nth-child(1):hover::before {
+    background-color:rgb(198,190,238);
+    transform: scaleX(1); /* Expand the pseudo-element to cover the card */
+}
+
+.innovation-card:nth-child(2):hover::before {
+    background-color:#f1cab8;
+    transform: scaleX(1);
+}
+
+.innovation-card:nth-child(3):hover::before {
+    background-color: #b1ebdc;
+    transform: scaleX(1);
+}
+
+.innovation-card:nth-child(4):hover::before {
+    background-color: #e9f0ac;
+    transform: scaleX(1);
+}
+
+/* Hover transform for the card */
+.innovation-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.innovation{
+    max-width:80%;
+    margin:auto;
+}
+
+.innovation-icon{
+    font-size:70px;
+    padding-bottom:4%;
+    padding-right:100%;
+    
+}
+
+.innovation-icon1{
+    color:rgb(23, 12, 86); /* Dark Green */
+}
+
+.innovation-icon2{
+    color:#e9f0ac; /* Yellow */
+}
+
+.innovation-icon3 {
+    color:#EBB1C0; /* Purple */
+}
+
+.innovation-icon4{
+    color:#B3ACF0; /* Light Green */
+}
+
+.innovation h2{
+    font-weight: bold;
+}
