@@ -25,7 +25,7 @@ const UsersList = () => {
 
   const fetchUsers = async (role = null) => {
     try {
-      const response = await axios.get("https://careerconnect-backend-5xq5.vercel.app/api/v1/user/all");
+      const response = await axios.get("https://careerconnect-backend-oqa4.vercel.app//api/v1/user/all");
       const allUsers = response.data.users;
       setAllUsers(allUsers);
 
@@ -52,7 +52,7 @@ const UsersList = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get("https://careerconnect-backend-5xq5.vercel.app/api/v1/company/getAllCompanies");
+        const response = await axios.get("https://careerconnect-backend-oqa4.vercel.app/api/v1/company/getAllCompanies");
         setCompanies(response.data.companies);
       } catch (error) {
         toast.error("Failed to fetch companies!");
@@ -61,7 +61,7 @@ const UsersList = () => {
 
     const fetchApplications = async () => {
       try {
-        const response = await axios.get("https://careerconnect-backend-5xq5.vercel.app/api/v1/application/getallapplications");
+        const response = await axios.get("https://careerconnect-backend-oqa4.vercel.app/api/v1/application/getallapplications");
         setApplications(response.data.applications);
       } catch (error) {
         toast.error("Failed to fetch applications!");
